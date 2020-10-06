@@ -34,11 +34,11 @@ def save_images(pil_images):
 if __name__ == "__main__":
     pil_images = pdftopil()
     save_images(pil_images)
-    pytesseract.pytesseract.tesseract_cmd ='/Users/sdock/Documents/tesseract/4.1.1/bin/tesseract'
+    pytesseract.pytesseract.tesseract_cmd ='TESSERACT LOCATION'
     scanning = True
     while scanning:
         scanner = 1
-        text = pytesseract.image_to_string('/Users/sdock/Desktop/' + str(name) + str(scanner) + ".jpg")
+        text = pytesseract.image_to_string('DESKTOP LOCATON' + str(name) + str(scanner) + ".jpg")
         print(text)
         text_file = open(str(name) + ".txt","w+")
         text_file.write(text)
@@ -49,14 +49,14 @@ if __name__ == "__main__":
     scanningmulti = True
     while scanningmulti:
         if scanner != int(numberofpages):
-            text = pytesseract.image_to_string('/Users/sdock/Desktop/' + str(name) + str(scanner) + ".jpg")
+            text = pytesseract.image_to_string('DESKTOP LOCATION' + str(name) + str(scanner) + ".jpg")
             print(text)
             text_file = open(str(name) + ".txt","a")
             text_file.write(text)
             text_file.close()
             scanner += 1
         if scanner == int(numberofpages):
-            text = pytesseract.image_to_string('/Users/sdock/Desktop/' + str(name) + str(numberofpages) + ".jpg")
+            text = pytesseract.image_to_string('DESKTOP LOCATION' + str(name) + str(numberofpages) + ".jpg")
             print(text)
             text_file = open(str(name) + ".txt","a")
             text_file.write(text)
